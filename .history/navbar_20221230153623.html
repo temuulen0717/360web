@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Scroll on Highlight</title>
+    <link rel="stylesheet" href="navbar.css" />
+</head>
+
+<body>
+    <section class="hero">
+        <header class="header">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="#!" class="logo">
+                        ШУТИС-МХТС
+                    </a>
+                    <div class="nav_icon">
+                        <div class="line"></div>
+                    </div>
+                    <ul class="nav_menu">
+                        <li class="nav_list">
+                            <a href="#!" class="nav_link home active">Зураг</a>
+                        </li>
+                        <li class="nav_list">
+                            <a href="#about" class="nav_link">About</a>
+                        </li>
+                        <li class="nav_list">
+                            <a href="#project" class="nav_link">360 зургууд</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
+    <section id="about">
+    </section>
+    <section id="project">
+        <h1>360 зургууд</h1>
+        <ul class="lis">
+            <li class="list active" data-filter="all">Бүгд</li>
+            <li class="list " data-filter="angi">Анги</li>
+            <li class="list " data-filter="kom">Ком</li>
+        </ul>
+        <div class="product">
+            <div class="itemBox angi">
+                <iframe allowfullscreen
+                    src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"></iframe>
+            </div>
+            <div class="itemBox angi">
+                <iframe allowfullscreen
+                    src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"></iframe>
+            </div>
+            <div class="itemBox kom">
+                <iframe allowfullscreen
+                    src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"></iframe>
+            </div>
+            <div class="itemBox angi">
+                <iframe allowfullscreen
+                    src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"></iframe>
+            </div>
+            <div class="itemBox kom">
+                <iframe allowfullscreen
+                    src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"></iframe>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".list").click(function () {
+                    const value = $(this).attr("data-filter");
+                    if (value == "all") {
+                        $(".itemBox").show("1000");
+                    } else {
+                        $(".itemBox")
+                            .not("." + value)
+                            .hide("1000");
+                        $(".itemBox")
+                            .filter("." + value)
+                            .show("1000");
+                    }
+                });
+                $(".list").click(function () {
+                    $(this).addClass("active").siblings().removeClass("active");
+                });
+            });
+        </script>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $(function(){
+        $(".index").load("/index.html");
+    })
+</script>

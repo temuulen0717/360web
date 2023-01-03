@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+  
+   <!--360 zurgiin heseg --> 
+    <section>
+      <ul>
+        <li class="list active" data-filter="all">Бүгд</li>
+        <li class="list" data-filter="angi">Анги</li>
+        <li class="list" data-filter="kom">Ком</li>
+      </ul>
+      <div class="product">
+        <div class="itemBox angi">
+          <iframe
+            src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"
+          ></iframe>
+        </div>
+        <div class="itemBox angi">
+          <iframe
+            src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"
+          ></iframe>
+        </div>
+        <div class="itemBox kom">
+          <iframe
+            src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"
+          ></iframe>
+        </div>
+        <div class="itemBox angi">
+          <iframe
+            src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"
+          ></iframe>
+        </div>
+        <div class="itemBox kom">
+          <iframe
+            src="https://momento360.com/e/u/d29cf767743341259794b6a7a052b0a5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".list").click(function () {
+          const value = $(this).attr("data-filter");
+          if (value == "all") {
+            $(".itemBox").show("1000");
+          } else {
+            $(".itemBox")
+              .not("." + value)
+              .hide("1000");
+            $(".itemBox")
+              .filter("." + value)
+              .show("1000");
+          }
+        });
+        $(".list").click(function () {
+          $(this).addClass("active").siblings().removeClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
